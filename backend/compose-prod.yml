@@ -1,0 +1,23 @@
+services:
+  app:
+    image: yaralex-api
+    ports:
+      - "49251:8000"
+    restart: unless-stopped
+    env_file:
+      - .env
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      # - type: bind
+      #   source: ./volumes/mongo
+      #   target: /data/db
+      #   bind:
+      #     create_host_path: true
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro # Initialization scripts only run if the data directory is empty (first start).
+    env_file:
+      - .env

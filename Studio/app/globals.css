@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+
+    /* Font family fallbacks */
+    --font-fallback: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+  }
+
+  .dark {
+    --background: 214 20% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 214 20% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 214 20% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Language-specific font families */
+  html[lang="en"] body {
+    font-family: var(--font-inter), var(--font-fallback);
+  }
+}
+
+@layer base {
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h1 {
+    @apply text-3xl font-bold mt-2 mb-2;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold my-1;
+  }
+
+  .prose h3 {
+    @apply text-xl font-bold mt-1 mb-1;
+  }
+
+  .prose p {
+    @apply mb-2;
+  }
+
+  .prose ul {
+    @apply list-disc pl-5 mb-2;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-5 mb-2;
+  }
+
+  .prose li {
+    @apply mb-0.5;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-muted pl-3 italic my-2;
+  }
+
+  .prose code {
+    @apply bg-muted px-1 py-0.5 rounded text-sm;
+  }
+
+  .prose pre {
+    @apply bg-muted p-2 rounded-md overflow-x-auto my-2;
+  }
+
+  .prose a {
+    @apply text-primary underline underline-offset-4;
+  }
+
+  .prose img {
+    @apply rounded-md max-w-full my-2;
+  }
+
+  .prose hr {
+    @apply border-border my-3;
+  }
+
+  .dark .prose {
+    @apply text-foreground;
+  }
+}
+
+@layer base {
+  .channel-content-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 1400px) {
+    .channel-content-container {
+      max-width: 1400px;
+    }
+  }
+}
+
+/* Add this to your globals.css file */
+[contenteditable].placeholder:empty:before {
+  content: attr(data-placeholder);
+  color: #9ca3af; /* text-gray-400 equivalent */
+  font-style: italic;
+  cursor: text;
+}
+
+/* OVERRIDE: Sonner style */
+[data-sonner-toast][data-styled="false"] {
+  padding: 16px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: var(--width);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+[data-sonner-toast][data-styled="false"] [data-button] {
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 24px;
+  font-size: 12px;
+  color: var(--normal-text) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  margin-left: var(--toast-button-margin-start) !important;
+  margin-right: var(--toast-button-margin-end) !important;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.4s, box-shadow 0.2s;
+}
+
+/* EditorContent style */
+.ProseMirror {
+  min-height: inherit !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.ProseMirror:focus,
+.ProseMirror:focus-visible {
+  outline: none !important;
+  border: none !important;
+}
+
+div [data-tippy-root] {
+  display: none !important;
+}
+
+/* For Channel Lesson Content */
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.deleting-card {
+  animation: zoomOut 300ms ease-in-out forwards;
+}
+
+/* Add these new styles for the dropdown */
+.group:hover .hidden {
+  display: block;
+}

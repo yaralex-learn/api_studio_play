@@ -1,0 +1,61 @@
+[
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "What is the synonym of 'happy'?",
+      "options": ["Sad", "Angry", "Joyful", "Hungry"],
+      "correct_answer": "Joyful"
+    },
+    {
+      "id": 2,
+      "type": "fill_in_the_blank",
+      "question": "Complete the sentence: Yesterday, I ___ (go) to the market and ___ (buy) some fruit.",
+      "blanks": ["went", "bought"],
+      "options": [
+        ["go", "went", "goed", "buy", "bought", "buys"]
+      ]
+    },
+    {
+      "id": 3,
+      "type": "true_false",
+      "question": "The main character in the story is a doctor.",
+      "correct_answer": true
+    },
+
+
+    {
+      "id": 4,
+      "type": "matching",
+      "question": "The question is here.",
+      "options": ["Option 1", "Option 2"],
+      "pairs": ["Pair for Option 1", "Pair for Option 2"]
+    },
+    {
+      "id": 5,
+      "type": "short_answer",
+      "question": "The question is here.",
+      "correct_answer": "The short answer is here."
+    },
+    {
+      "id": 6,
+      "type": "lesson_multiple_choice",
+      "question": "The question is here.",
+      "points": 0,
+      "time_limit": null,
+      "options": [
+        {
+          "text": "Option 1",
+          "isCorrect": true,
+          "explanation": "Explanation for Option 1"
+        },
+        {
+          "text": "Option 1",
+          "isCorrect": false,
+          "explanation": "Explanation for Option 2"
+        }
+      ]
+    }
+
+
+  ]
+  

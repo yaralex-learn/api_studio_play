@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "type": "multiple_choice",
+      "question": "What is the synonym of 'happy'?",
+      "options": ["Sad", "Angry", "Joyful", "Hungry"],
+      "correct_answer": "Joyful"
+    },
+    {
+      "id": 2,
+      "type": "fill_in_the_blank",
+      "question": "Complete the sentence: Yesterday, I ___ (go) to the market and ___ (buy) some fruit.",
+      "blanks": ["went", "bought"],
+      "options": [
+        ["go", "went", "goed", "buy", "bought", "buys"]
+      ]
+    },
+    {
+      "id": 3,
+      "type": "true_false",
+      "question": "The main character in the story is a doctor.",
+      "correct_answer": true
+    }
+  ]

@@ -1,0 +1,19 @@
+services:
+  yaralex-studio:
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - "44301:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_BASE_URL=https://api.yaralex.com
+      - NEXT_PUBLIC_YARALEX_PLAY_URL=https://play.yaralex.com
+      - NEXT_PUBLIC_GOOGLE_CLIENT_ID=940538258951-mepajb01hrgf29h74ppv62k0bkub3qnf.apps.googleusercontent.com
+    restart: unless-stopped
+    networks:
+      - cloudflare
+
+networks:
+  cloudflare:
+    external: true

@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.env
+venv/
+.vscode/
+volumes/
+Space_API_Migration_Guide_Cursor.md

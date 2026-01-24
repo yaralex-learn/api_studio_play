@@ -1,0 +1,21 @@
+# docker-compose.yml
+services:
+  yaralex_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "49251:8000"
+    container_name: yaralex_api
+    networks:
+      - cloudflare
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=mongodb://root:b2vFj15CI1Nrtb9Y4gPMYGpv@158.220.110.147:49101/yaralex_api?authSource=admin
+      - ENV=production
+
+networks:
+  cloudflare:
+    external: true

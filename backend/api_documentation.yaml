@@ -1,0 +1,42 @@
+Enter with link or from landing page: 
+
+/play_creators/
+  GET method:
+    Docs: fetch instructors and thier channels
+
+class play_user(Document):
+    name: str
+    email: str
+    authentication: str
+    date_joined: datetime
+    last_login: datetime
+    subscribed_channels: dict[str, str] # [dict(ch1:full_access, ch2:limited_access)] 
+
+
+/play_subscription/{channel_id}/
+  GET method:
+    Docs: send channel info + sub tier + coupons
+
+
+
+class UserProgress(Document):
+    user_id: str
+    channel_id: str
+    progress: list[dict(section_id, unit_id, activity_id, progress_percentage)]
+    progress_in_activities: activity_id
+    needs_review: list[str]
+    hearts_earned: int
+    content: get outline_content from Channel
+    content_status: list[dict(id, completed, is_free)]
+
+Need to get the content from get_channel_content_outline_stats and make contnet status with completed and is_free.
+  GET method:
+    url: /progress/
+    Docs: Fetch content that includes section, unit, activity, lesson, quiz
+
+  POST method:
+    url: /progress/
+    Docs: Update user progress and status
+
+
+

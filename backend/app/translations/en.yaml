@@ -1,0 +1,21 @@
+ACCOUNT_CREATED: Congratulation! Your account has been created.
+ALREADY_REGISTERED: It looks like you already have an account. If you forgot your
+  password, please reset it; otherwise, log in.
+AUTHORIZATION_HEADER_REQUIRED: Authorization header is required
+CHANNEL_CREATED: '---'
+CHANNEL_NOT_FOUND: '---'
+INVALID_CREDENTIALS: Invalid credentials
+INVALID_EMAIL_ADDRESS: '---'
+INVALID_TOKEN: Invalid Token!
+LOGGED_IN: '---'
+TAKEN_USERNAME: Sorry! This username has already been taken.
+USERNAME_ERROR: Invalid username. Usernames must be 3-16 characters long, can only
+  contain letters, numbers, and underscores, cannot start or end with an underscore
+  or a digit, and cannot contain consecutive underscores.
+USER_INVALID_CREDENTIALS: '---'
+USER_IS_NOT_ACTIVE: User is not active!
+USER_NOT_FOUND: User not found
+VALIDATION_ERROR: Invalid Input
+WEAK_PASSWORD: Invalid password. Passwords must be 6-20 characters long and include
+  at least one uppercase letter, one lowercase letter, one digit, and one special
+  character.
