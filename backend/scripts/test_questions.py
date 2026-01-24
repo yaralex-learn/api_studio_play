@@ -4,8 +4,8 @@ from openai import OpenAI
 
 client = OpenAI()
 
-OPENAI_API_KEY= "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"
-# export OPENAI_API_KEY="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"
+OPENAI_API_KEY= 
+# export OPENAI_API_KEY=
 
 import re
 
